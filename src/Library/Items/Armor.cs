@@ -6,7 +6,8 @@ public class Armor: IDefenseItem
     {
         get
         {
-            return 25;
+            return 25; 
+            
         }
     }
 }
