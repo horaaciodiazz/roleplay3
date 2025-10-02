@@ -1,12 +1,9 @@
 namespace Ucu.Poo.RoleplayGame;
 
-public class Sword: IAttackItem
+public class Sword: Item, IAttackItem
 {
-    public int AttackValue
+    public Sword() : base(20, 0)
     {
-        get
-        {
-            return 20;
-        }
+        // Intencionalmente en blanco.
     }
 }
