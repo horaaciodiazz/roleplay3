@@ -1,20 +1,9 @@
 namespace Ucu.Poo.RoleplayGame;
 
-public class SpellOne: ISpell
+public class SpellOne: Item, ISpell
 {
-    public int AttackValue
+    public SpellOne() : base(70, 70)
     {
-        get
-        {
-            return 70;
-        }
-    }
-
-    public int DefenseValue
-    {
-        get
-        {
-            return 70;
-        }
+        // Intencionalmente en blanco.
     }
 }
