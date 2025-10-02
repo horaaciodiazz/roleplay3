@@ -1,12 +1,9 @@
 namespace Ucu.Poo.RoleplayGame;
 
-public class Shield: IDefenseItem
+public class Shield: Item, IDefenseItem
 {
-    public int DefenseValue
+    public Shield() : base(0, 14)
     {
-        get
-        {
-            return 14;
-        }
+        // Intencionalmente en blanco.
     }
 }

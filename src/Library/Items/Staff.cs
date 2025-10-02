@@ -1,20 +1,9 @@
 namespace Ucu.Poo.RoleplayGame;
 
-public class Staff: IAttackItem, IDefenseItem
+public class Staff: Item, IAttackItem, IDefenseItem
 {
-    public int AttackValue
+    public Staff() : base(100, 100)
     {
-        get
-        {
-            return 100;
-        }
-    }
-
-    public int DefenseValue
-    {
-        get
-        {
-            return 100;
-        }
+        // Intencionalmente en blanco.
     }
 }

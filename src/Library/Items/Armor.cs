@@ -1,13 +1,9 @@
 namespace Ucu.Poo.RoleplayGame;
 
-public class Armor: IDefenseItem
+public class Armor: Item, IDefenseItem
 {
-    public int DefenseValue
+    public Armor() : base(0, 25)
     {
-        get
-        {
-            return 25; 
-            
-        }
+        // Intencionalmente en blanco.
     }
 }

@@ -1,12 +1,9 @@
 namespace Ucu.Poo.RoleplayGame;
 
-public class Axe: IAttackItem
+public class Axe: Item, IAttackItem
 {
-    public int AttackValue
+    public Axe() : base(25, 0)
     {
-        get
-        {
-            return 25;
-        }
+        
     }
 }
