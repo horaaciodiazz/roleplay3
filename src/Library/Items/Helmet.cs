@@ -1,6 +1,6 @@
 namespace Ucu.Poo.RoleplayGame;
 
-public class Helmet: Item, IAttackItem
+public class Helmet: Item, IDefenseItem
 {
     public Helmet() : base(0, 18)
     {
