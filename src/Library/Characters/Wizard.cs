@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 namespace Ucu.Poo.RoleplayGame;
 
-public class Wizard: Character, IMagicCharacter
+public class Wizard: Heroe, IMagicCharacter
 {
     private int health = 100;
 
