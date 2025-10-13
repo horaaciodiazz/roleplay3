@@ -53,5 +53,4 @@ public class Wizard: Heroe, IMagicCharacter
     {
         this.magicalItems.Remove(item);
     }
-
 }

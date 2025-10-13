@@ -45,12 +45,19 @@ public class Encuentros
                 Villians[valorV].ReceiveAttack(VARIABLE1.AttackValue);
                 if (Villians[valorV].Health <= 0)
                 {
-                    VARIABLE1.Victory_Points = +Villians[valorV].Victory_Points;
+                    VARIABLE1.Victory_Points += Villians[valorV].Victory_Points;
                     Villians.RemoveAt(valorV);
                 }
 
                 if (Villians.Count() == 0)
                 {
+                    foreach (Heroe heroe in Heroes)
+                    {
+                        if (heroe.Victory_Points >= 5)
+                        {
+                            heroe.Cure();
+                        }
+                    }
                     Console.WriteLine("Los villanos perdieron");
                     return;
                 }
@@ -60,6 +67,7 @@ public class Encuentros
                 {
                     valorV = 0;
                 }
+                
             }
         }
     }
