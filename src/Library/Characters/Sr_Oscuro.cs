@@ -5,6 +5,7 @@ public class Sr_Oscuro: Villian
     public Sr_Oscuro(string name) : base(name)
     {
         this.AddItem(new Sword());
+        this.AddItem(new Axe());
         this.AddItem(new Armor());
     }
 

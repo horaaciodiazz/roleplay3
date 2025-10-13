@@ -20,9 +20,9 @@ public class Encuentros
         int valorH = 0;
         while (Heroes.Count>0&&Villians.Count>0)
         {
-            foreach (var VARIABLE in Villians)
+            foreach (Villian villian in Villians)
             {
-                Heroes[valorH].ReceiveAttack(VARIABLE.AttackValue);
+                Heroes[valorH].ReceiveAttack(villian.AttackValue);
                 if (Heroes[valorH].Health <= 0)
                 {
                     Heroes.RemoveAt(valorH);
@@ -40,22 +40,22 @@ public class Encuentros
             }
             valorH = 0;
             valorV = 0;
-            foreach (var VARIABLE1 in Heroes)
+            foreach (Heroe heroe0 in Heroes)
             {
-                Villians[valorV].ReceiveAttack(VARIABLE1.AttackValue);
+                Villians[valorV].ReceiveAttack(heroe0.AttackValue);
                 if (Villians[valorV].Health <= 0)
                 {
-                    VARIABLE1.Victory_Points += Villians[valorV].Victory_Points;
+                    heroe0.Victory_Points += Villians[valorV].Victory_Points;
                     Villians.RemoveAt(valorV);
                 }
 
                 if (Villians.Count() == 0)
                 {
-                    foreach (Heroe heroe in Heroes)
+                    foreach (Heroe heroe1 in Heroes)
                     {
-                        if (heroe.Victory_Points >= 5)
+                        if (heroe1.Victory_Points >= 5)
                         {
-                            heroe.Cure();
+                            heroe1.Cure();
                         }
                     }
                     Console.WriteLine("Los villanos perdieron");
