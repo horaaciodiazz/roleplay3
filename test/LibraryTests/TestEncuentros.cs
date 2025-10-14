@@ -6,7 +6,7 @@ using Ucu.Poo.RoleplayGame;
 public class TestEncuentros
 {
     [Test]
-    public void Archer_WizardVSDragonMaster_Sr_OscuroEncuentro()
+    public void ArcherWizard_VS_DragonMasterSrOscuroEncuentro()
     {
         Archer archer = new Archer("archer");
         Wizard wizard = new Wizard("wizard");
@@ -22,7 +22,7 @@ public class TestEncuentros
         Assert.That(esperado,Is.EqualTo(wizard.Victory_Points));
     }
     [Test]
-    public void Knight_DwarfVSNoNameWarrior()
+    public void KnightDwarf_VS_NoNameWarrior()
     {
         Knight knight = new Knight("knight");
         Dwarf duarf = new Dwarf("dwarf");
@@ -38,7 +38,7 @@ public class TestEncuentros
     }
 
     [Test]
-    public void ArcherVSDagonMaster_NoNameWrrior()
+    public void Archer_VS_DagonMasterNoNameWrrior()
     {
         Archer archer = new Archer("archer");
         DragonMaster dragonMaster = new DragonMaster("dragon master");
@@ -52,7 +52,7 @@ public class TestEncuentros
         Assert.That(esperado,Is.EqualTo(encuentro.Heroes.Count));
     }
     [Test]
-    public void WizardVSAllVillians()
+    public void Wizard_VS_AllVillians()
     {
         DragonMaster dragonMaster = new DragonMaster("dragon master");
         NoNameWarrior noname = new NoNameWarrior("no");
@@ -71,17 +71,34 @@ public class TestEncuentros
     }
 
     [Test]
-    public void HHVsVV()
+    public void HH_Vs_VV()
     {
-        Archer archer = new Archer("1");
         Dwarf dwarf = new Dwarf("2");
         Knight knhigt = new Knight("3");
-        DragonMaster dragonMaster = new DragonMaster("4");
         Sr_Oscuro srOscuro = new Sr_Oscuro("5");
         NoNameWarrior noNameWarrior = new NoNameWarrior("6");
         Encuentros encuentro = new Encuentros();
         encuentro.AddHeroe(knhigt);
         encuentro.AddHeroe(dwarf);
+        encuentro.AddVillian(srOscuro);
+        encuentro.AddVillian(noNameWarrior);
+        encuentro.encuentro();
+        int esperado = 1;
+        Assert.That(esperado, Is.EqualTo(encuentro.Villians.Count()));
+
+    }
+    [Test]
+    public void HHH_Vs_VV()
+    {
+        Archer archer = new Archer("1");
+        Dwarf dwarf = new Dwarf("2");
+        Knight knhigt = new Knight("3");
+        Sr_Oscuro srOscuro = new Sr_Oscuro("5");
+        NoNameWarrior noNameWarrior = new NoNameWarrior("6");
+        Encuentros encuentro = new Encuentros();
+        encuentro.AddHeroe(knhigt);
+        encuentro.AddHeroe(dwarf);
+        encuentro.AddHeroe(archer);
         encuentro.AddVillian(srOscuro);
         encuentro.AddVillian(noNameWarrior);
         encuentro.encuentro();
